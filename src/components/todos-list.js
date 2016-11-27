@@ -1,6 +1,5 @@
 import _ from 'lodash';
 import React from 'react';
-import CreateTodo from './create-todo';
 import TodosListHeader from './todos-list-header';
 import TodosListItem from './todos-list-item';
 
@@ -10,7 +9,6 @@ const TodosList = ({todos, onAddClick, onTodoClick, onDeleteClick, onEditClick, 
     <table>
       <TodosListHeader />
       <tbody>
-        <CreateTodo onAdd={onAddClick}  />
         {todos.map( todo => <TodosListItem
           key={todo.id}
           {...todo}

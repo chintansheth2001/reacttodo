@@ -1,11 +1,23 @@
 let nextTodoId = 4
-export const addTodo = (addtodoinput) => {
-  let task = addtodoinput.value
-  addtodoinput.value = '';
+export const addTodo = (task) => {
   return {
     type: 'ADD_TODO',
     id: nextTodoId++,
     task: task
+  }
+}
+
+export const setVisibilityFilter = (filter) => {
+  return {
+    type: 'SET_VISIBILITY_FILTER',
+    filter
+  }
+}
+
+export const setShowError = (errorb) => {
+  return {
+    type: 'SET_SHOW_ERROR',
+    errorb
   }
 }
 

@@ -1,27 +1,14 @@
-import React from 'react';
-import VisibleTodoList from '../containers/VisibleTodoList';
+import React from 'react'
+import Footer from './Footer'
+import AddTodo from '../containers/AddTodo'
+import VisibleTodoList from '../containers/VisibleTodoList'
 
-
-const todos = [
-  {
-    task: 'make React tutorial',
-    isCompleted: false,
-    isEditing: false,
-    error: null
-  }
-];
 const App = () => (
   <div>
     <h1>React ToDos App</h1>
+    <AddTodo />
     <VisibleTodoList />
+    <Footer />
   </div>
 )
 export default App
-
-//
-// <TodosList
-//   todos={this.state.todos}
-//   toggleTask={this.toggleTask.bind(this)}
-//   saveTask={this.saveTask.bind(this)}
-//   deleteTask={this.deleteTask.bind(this)}
-// />

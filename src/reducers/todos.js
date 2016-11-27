@@ -1,35 +1,4 @@
-const todos = [
-  {
-    id: 0,
-    task: 'Make React tutorial',
-    isCompleted: false,
-    isEditing: false,
-    error: null
-  },
-  {
-    id: 1,
-    task: 'Eat dinner',
-    isCompleted: true,
-    isEditing: false,
-    error: null
-  },
-  {
-    id: 2,
-    task: 'Learn redux',
-    isCompleted: true,
-    isEditing: false,
-    error: null
-  },
-  {
-    id: 3,
-    task: 'Say Hi ',
-    isCompleted: false,
-    isEditing: false,
-    error: null
-  }
-];
-
-const todo = (state, action) => {
+const todo = (state = {} , action) => {
   switch (action.type) {
     case 'ADD_TODO':
       return {
@@ -43,7 +12,7 @@ const todo = (state, action) => {
       }
 
       return Object.assign({}, state, {
-        isCompleted: !state.isCompleted
+        completed: !state.completed
       })
 
     case 'EDIT_TODO':
@@ -78,7 +47,7 @@ const todo = (state, action) => {
 
 
 
-const r_todos = (state = todos, action) => {
+const todos = (state = [], action) => {
   switch (action.type) {
     case 'ADD_TODO':
       return [
@@ -100,7 +69,6 @@ const r_todos = (state = todos, action) => {
     default:
       return state
   }
-  return state;
 }
 
-export default r_todos
+export default todos

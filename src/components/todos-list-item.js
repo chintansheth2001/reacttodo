@@ -2,8 +2,23 @@ import React from 'react';
 import ValidateTask from './common-function';
 
 
-const TodosListItem = ({ onClick, onDelete, onEdit,  completed, task, onSave, onCancel, isEditing, todo }) => {
+const TodosListItem = ({ setShowError, onClick, onDelete, onEdit,  completed, task, onSave, onCancel, isEditing, todo, todos }) => {
   let input;
+
+  let onSaveCheck = () => {
+
+    let matchTodo = todos.filter( t => input.value == t.task )
+    if(matchTodo.length > 0){
+      setShowError(true)
+    }
+    else{
+      onSave(todo.id, input.value )
+      setShowError(false)
+    }
+
+  }
+
+
       return(
         <tr>
           {isEditing ?
@@ -23,7 +38,7 @@ const TodosListItem = ({ onClick, onDelete, onEdit,  completed, task, onSave, on
 
           {isEditing ?
           <td>
-            <button onClick={() => onSave(todo.id, input.value )} >Save</button>
+            <button onClick={() => onSaveCheck()} >Save</button>
             <button onClick={onCancel}>Cancel</button>
           </td>
           :

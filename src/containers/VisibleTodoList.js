@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import { connect } from 'react-redux'
-import { toggleTodo, deleteTodo, editTodo, cancelTodo, saveTodo  } from '../actions'
+import { setShowError, toggleTodo, deleteTodo, editTodo, cancelTodo, saveTodo  } from '../actions'
 import TodoList from '../components/todos-list'
 
 const getVisibleTodos = (todos, filter) => {
@@ -37,6 +37,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     onCancelClick: (id) => {
       dispatch(cancelTodo(id))
+    },
+    onsetShowError: (errorb) => {
+      dispatch(setShowError(errorb))
     }
   }
 }

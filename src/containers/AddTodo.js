@@ -23,6 +23,8 @@ let AddTodo = ({ dispatch, state }) => {
 
   return (
     <div>
+      {state.showError ? <h2 style={ {color:'red'} }>Alread entered</h2> : <div></div>}
+
       <form
         onSubmit={e => {
           e.preventDefault()
@@ -37,7 +39,6 @@ let AddTodo = ({ dispatch, state }) => {
         <button type="submit">
           Add Todo
         </button>
-        {state.showError ? <div style={ {color:'red'} }>Alread entered</div> : <div></div>}
       </form>
     </div>
   )

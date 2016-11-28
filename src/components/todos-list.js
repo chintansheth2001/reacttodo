@@ -4,7 +4,7 @@ import TodosListHeader from './todos-list-header';
 import TodosListItem from './todos-list-item';
 
 
-const TodosList = ({todos, onAddClick, onTodoClick, onDeleteClick, onEditClick, onSaveClick, onCancelClick}) => {
+const TodosList = ({todos, onsetShowError, onAddClick, onTodoClick, onDeleteClick, onEditClick, onSaveClick, onCancelClick}) => {
   return(
     <table>
       <TodosListHeader />
@@ -12,6 +12,8 @@ const TodosList = ({todos, onAddClick, onTodoClick, onDeleteClick, onEditClick, 
         {todos.map( todo => <TodosListItem
           key={todo.id}
           {...todo}
+          todos={todos}
+          setShowError={onsetShowError}
           todo={todo}
           onClick={() => onTodoClick(todo.id)}
           onDelete={() => onDeleteClick(todo.id)}

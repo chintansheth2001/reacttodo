@@ -23,7 +23,7 @@ let AddTodo = ({ dispatch, state }) => {
 
   return (
     <div>
-      {state.showError ? <h2 style={ {color:'red'} }>Alread entered</h2> : <div></div>}
+      {state.showError ? <h2 style={ {color:'red'} }>Already entered</h2> : <div></div>}
 
       <form
         onSubmit={e => {

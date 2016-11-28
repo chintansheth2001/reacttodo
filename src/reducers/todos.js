@@ -57,9 +57,8 @@ const todos = (state = [], action) => {
     case 'TOGGLE_TODO':
       return state.map(t => todo(t, action) )
     case 'DELETE_TODO':
-      let arr = [...state];
-      arr.splice(0,1);
-      return  arr;
+      var a1 = [...state].filter(function(item) { return  item.id !== action.id; });
+      return  a1;
     case 'EDIT_TODO':
       return state.map(t => todo(t, action))
     case 'SAVE_TODO':

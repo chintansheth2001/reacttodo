@@ -15,7 +15,7 @@ const TodosList = ({todos, onsetShowError, onAddClick, onTodoClick, onDeleteClic
           todos={todos}
           setShowError={onsetShowError}
           todo={todo}
-          onClick={() => onTodoClick(todo.id)}
+          onClick={() => onTodoClick(todo)}
           onDelete={() => onDeleteClick(todo.id)}
           onEdit={() => onEditClick(todo.id)}
           onSave={onSaveClick}

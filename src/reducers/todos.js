@@ -65,6 +65,8 @@ const todos = (state = [], action) => {
       return state.map(t => todo(t, action))
     case 'CANCEL_TODO':
       return state.map(t => todo(t, action))
+    case 'FETCH_TODO':
+      return action.todos;
     default:
       return state
   }

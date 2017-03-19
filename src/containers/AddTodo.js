@@ -7,7 +7,8 @@ let AddTodo = ({ dispatch, state }) => {
 
   let input
   let errorMessage
-
+  let nextTodoId = state.todos[state.todos.length-1] ? state.todos[state.todos.length-1].id : 0
+  console.log(nextTodoId)
 
   let onAddTodo = () =>{
     let matchTodo = state.todos.filter( t => input.value == t.task )
@@ -15,7 +16,7 @@ let AddTodo = ({ dispatch, state }) => {
       dispatch(setShowError(true))
     }
     else{
-      dispatch( addTodo(input.value) )
+      dispatch( addTodo(input.value, nextTodoId) )
       dispatch(setShowError(false))
       input.value = ''
     }
